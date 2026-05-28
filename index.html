@@ -1,67 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
+  <!DOCTYPE html>
+<html>
+<head>
   <base href="/Smart-closet/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="smart_closet_ai">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>smart_closet_ai</title>
-  <link rel="manifest" href="manifest.json">
 </head>
-<body><script type="module">
-  // Importa os SDKs que precisas
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-  import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+<body>
+  <base href="/Smart-closet/">
+  <meta charset="UTF-8">
+  <title>Smart Closet AI</title>
+</head>
+<body>
+  <!-- Scripts do Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCEqws1LWDLz3rRDgEos6rJQURN_F_fL92w",
+      authDomain: "legacy-1a156.firebaseapp.com",
+      projectId: "legacy-1a156",
+      storageBucket: "legacy-1a156.firebasestorage.app",
+      messagingSenderId: "726139942272",
+      appId: "1:726139942272:web:feb4c06d387abc1fff7d65"
+    };
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  </script>
 
-  // A tua configuração do Firebase (Copiada do teu print)
-  const firebaseConfig = {
-    apiKey: "AIzaSyCEqwslLWDLz3rRDgEos6rJQURnA_fL92w",
-    authDomain: "legacy-1a156.firebaseapp.com",
-    projectId: "legacy-1a156",
-    storageBucket: "legacy-1a156.firebasestorage.app",
-    messagingSenderId: "726139942272",
-    appId: "1:726139942272:web:feb4c06d387abc1fff7d65",
-    measurementId: "G-PFBGFS02S3"
-  };
-
-  // Inicializa o Firebase e guarda no escopo global da janela web
-  const app = initializeApp(firebaseConfig);
-  window.firebaseAuth = getAuth(app);
-  window.firebaseFirestore = getFirestore(app);
-</script>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
-
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
+  <!-- Script de Inicialização do Flutter Web -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
