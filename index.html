@@ -32,7 +32,28 @@
   <title>smart_closet_ai</title>
   <link rel="manifest" href="manifest.json">
 </head>
-<body>
+<body><script type="module">
+  // Importa os SDKs que precisas
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+  // A tua configuração do Firebase (Copiada do teu print)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCEqwslLWDLz3rRDgEos6rJQURnA_fL92w",
+    authDomain: "legacy-1a156.firebaseapp.com",
+    projectId: "legacy-1a156",
+    storageBucket: "legacy-1a156.firebasestorage.app",
+    messagingSenderId: "726139942272",
+    appId: "1:726139942272:web:feb4c06d387abc1fff7d65",
+    measurementId: "G-PFBGFS02S3"
+  };
+
+  // Inicializa o Firebase e guarda no escopo global da janela web
+  const app = initializeApp(firebaseConfig);
+  window.firebaseAuth = getAuth(app);
+  window.firebaseFirestore = getFirestore(app);
+</script>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
